@@ -77,9 +77,9 @@ public class LogSplitter {
         }
     }
 
-    protected void log(LEVEL level, String msg) {
+    protected boolean log(LEVEL level, String msg) {
         if (!shouldLog(level)) {
-            return;
+            return false;
         }
         for (String s : split(msg)) {
             switch (level){
@@ -100,6 +100,7 @@ public class LogSplitter {
                     break;
             }
         }
+        return true;
     }
 
     private boolean shouldLog(LEVEL requestedLogLevel) {
