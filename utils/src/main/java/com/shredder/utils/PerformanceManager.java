@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Hashtable;
 
 public class PerformanceManager {
-	private static final ShredderLog log = new ShredderLog(PerformanceManager.class);
+	private static final LogSplitter log = new LogSplitter(PerformanceManager.class);
 	private final static Hashtable<String, Date> startTimes = new Hashtable<>();
 	private final static Date initDate = new Date();
 
